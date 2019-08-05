@@ -1,0 +1,60 @@
+.bordeCont {
+    border: solid 1px;
+}
+
+
+/* .margen {
+    margin-left: 2%;
+} */
+
+.cursor {
+    cursor: pointer;
+}
+
+div.margenGlobal {
+    margin-top: 9% !important;
+}
+
+@media only screen and (max-width: 800px) {
+    div.margenGlobal {
+        margin-top: 20% !important;
+    }
+}
+
+
+/* @media only screen and (max-width: 800px) {
+    div.margen {
+        margin-left: 9% !important;
+    }
+} */
+
+.imagen:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+.redondeado {
+    border-radius: 20px !important;
+}
+
+.margenGrid {
+    margin-left: 5%;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 999px) {
+    .margenGrid {
+        margin-left: 0%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .margenGrid {
+        margin-left: 20%;
+    }
+}
+
+.pointer {
+    cursor: pointer !important;
+}

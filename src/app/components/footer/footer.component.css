@@ -1,40 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
-
-/* You can add global styles to this file, and also import other style files */
-
-
-/* body {
-    background-image: url(assets/img/huellas.jpg);
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-size: cover;
-} */
-
-
-/* body {
-    background-image: url(assets/img/fondo.jpg);
-} */
-
-.margenGlobal {
-    margin-top: 9% !important;
-    /* margin-left: 10%; */
-}
-
-@media only screen and (max-width: 800px) {
-    .margenGlobal {
-        margin-top: 20% !important;
-        padding-bottom: 25%;
-        margin-left: 0%;
-    }
-}
-
-p {
-    font-size: large;
-    /* font-weight: lighter; */
-}
-
-.gradient {
+.backG {
     background: rgba(147, 206, 222, 1);
     background: -moz-linear-gradient(left, rgba(147, 206, 222, 1) 0%, rgba(117, 189, 209, 1) 41%, rgba(73, 165, 191, 1) 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, rgba(147, 206, 222, 1)), color-stop(41%, rgba(117, 189, 209, 1)), color-stop(100%, rgba(73, 165, 191, 1)));
@@ -43,13 +7,10 @@ p {
     background: -ms-linear-gradient(left, rgba(147, 206, 222, 1) 0%, rgba(117, 189, 209, 1) 41%, rgba(73, 165, 191, 1) 100%);
     background: linear-gradient(to right, rgba(147, 206, 222, 1) 0%, rgba(117, 189, 209, 1) 41%, rgba(73, 165, 191, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1);
-}
-
-.text-color {
-    color: black !important;
-}
-
-body {
-    background-color: #FFFFFF;
-    /* background-image: url(assets/img/fondo.jpg); */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
 }

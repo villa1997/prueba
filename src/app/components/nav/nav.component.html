@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg bg-light fixed-top backG sobrePoner">
+    <div class="logo">
+        <a [routerLink]="[ '/inicio']" class="brand-logo logotipo"><img src="assets/img/icono_granada.png" alt="Logotipo"></a>
+    </div>
+    <button class="navbar-toggler borde" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+              <hr class="borde">
+              <hr>
+          </span>
+    </button>
+    <div class="collapse navbar-collapse sizeMini" id="navbarNav">
+        <ul class="navbar-nav sizeMini">
+            <li class="nav-item active">
+                <a class="nav-link tipeBtn font-size ml-2" [routerLink]="['/index']">Inicio</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link tipeBtn font-size ml-2" [routerLink]="['/register']">Registro</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link tipeBtn font-size ml-2" [routerLink]="['/book']">Lista Libros</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link tipeBtn font-size ml-2" [routerLink]="['/user']">Perfil</a>
+            </li>
+
+            <div class="dropdown">
+                <button class="dropbtn font-size ml-2">Login</button>
+                <div class="dropdown-content container text-center">
+                    <form (ngSubmit)="saveData()" [formGroup]="loginForm">
+
+                        <div class="form-group col-12 col-lg-12 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                            <span><i class="fas fa-user"></i></span> &nbsp;
+                            <label>Usuario&nbsp;<span style="color: red;">*</span></label>
+                            <input class="w3-input form-control" type="text" placeholder="Ingrese Usuario" id="usuario" name="usuario" formControlName="usuario" [ngClass]="{ 'is-invalid': submittedLogin && f.usuario.errors }">
+
+                            <div *ngIf="submittedLogin && f.usuario.errors" class="invalid-feedback">
+                                <div *ngIf="f.usuario.errors.required">Usuario es requerido</div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-12 col-lg-12 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                            <span><i class="fas fa-key"></i></span> &nbsp;
+                            <label>Contraseña&nbsp;<span style="color: red;">*</span></label>
+                            <input class="w3-input form-control" type="password" placeholder="Ingrese Contraseña" id="password" name="password" formControlName="password" [ngClass]="{ 'is-invalid': submittedLogin && f.password.errors }">
+
+                            <div *ngIf="submittedLogin && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Contraseña es requerida</div>
+                            </div>
+                        </div>
+
+                        <div class="formgroup">
+                            <button type="submit" class="btn btn-sm colorboton" (click)="loginMethod()" style="width: 60px; height:30px;">Login</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- <li class="nav-item">
+                <a class="nav-link tipeBtn font-size ml-2" href="#">Login</a>
+            </li> -->
+        </ul>
+    </div>
+</nav>

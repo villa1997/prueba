@@ -1,0 +1,53 @@
+.profile-head {
+    height: 200px;
+    overflow: hidden;
+}
+
+.profile-head-bg {
+    width: 100%;
+    height: auto;
+    filter: blur(20px);
+    -moz-filter: blur(20px);
+    -webkit-filter: blur(20px);
+}
+
+.avatar-wrap {
+    margin: 0 auto;
+    border: 2px solid white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.info-wrap {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.cursor {
+    cursor: not-allowed;
+    ;
+}
+
+.orientacion {
+    margin-right: auto;
+    margin-left: 35%;
+}
+
+@media only screen and (max-width: 800px) {
+    .orientacion {
+        /* margin-right: 40%; */
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,55 @@
+<div class="margenGlobal">
+    <h3 class="text-center">Registro de usuario</h3>
+    <form (ngSubmit)="saveData()" [formGroup]="registerForm" class="container-fluid border" style="width: 70%;">
+        <div class="container">
+            <div class="row my-3">
+                <!-- formulario -->
+                <div class="form-group col-12 col-lg-12 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                    <span><i class="fas fa-id-card"></i></span> &nbsp;
+                    <label>Nombres&nbsp;<span style="color: red;">*</span></label>
+                    <input class="w3-input form-control" type="text" placeholder="Ingrese su nombre completo" id="nombreRegister" name="nombreRegister" formControlName="nombreRegister" [ngClass]="{ 'is-invalid': submitted && f.nombreRegister.errors }">
+
+                    <div *ngIf="submitted && f.nombreRegister.errors" class="invalid-feedback">
+                        <div *ngIf="f.nombreRegister.errors.required">Nombres es requerido</div>
+                    </div>
+                </div>
+
+
+                <div class="form-group col-12 col-lg-12 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                    <span><i class="fas fa-user"></i></span> &nbsp;
+                    <label>Usuario&nbsp;<span style="color: red;">*</span></label>
+                    <input class="w3-input form-control" type="text" placeholder="Ingrese Usuario" id="usuarioRegister" name="usuarioRegister" formControlName="usuarioRegister" [ngClass]="{ 'is-invalid': submitted && f.usuarioRegister.errors }">
+
+                    <div *ngIf="submitted && f.usuarioRegister.errors" class="invalid-feedback">
+                        <div *ngIf="f.usuarioRegister.errors.required">Usuario es requerido</div>
+                    </div>
+                </div>
+
+
+                <div class="form-group col-12 col-lg-12 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                    <span><i class="fas fa-key"></i></span> &nbsp;
+                    <label>Contraseña&nbsp;<span style="color: red;">*</span></label>
+                    <input class="w3-input form-control" type="password" placeholder="Ingrese Contraseña" id="passwordRegister" name="passwordRegister" formControlName="passwordRegister" [ngClass]="{ 'is-invalid': submitted && f.passwordRegister.errors }">
+
+                    <div *ngIf="submitted && f.passwordRegister.errors" class="invalid-feedback">
+                        <div *ngIf="f.passwordRegister.errors.required">Contraseña es requerida</div>
+                        <div *ngIf="f.passwordRegister.errors.minlength">Debe tener minimo seis caracteres</div>
+                    </div>
+                </div>
+
+                <!-- botones -->
+                <div class="form-group mt-2" style="margin-left: 2%;">
+                    <button type="submit" (click)="registrar()" class="btn btn-lg btn-success gradient text-color">Registrar</button>
+                </div>
+
+                <div class="form-group mt-2" style="margin-left: 2%;">
+                    <button type="reset" class="btn btn-lg btn-danger text-color">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+</div>

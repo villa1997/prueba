@@ -1,0 +1,103 @@
+<div class="margenGlobal">
+    <h3 class="text-center">Editar Libro</h3>
+    <div class="text-center">
+        <img class="border" [src]="imgURL" height="200" *ngIf="imgURL">
+    </div>
+    <form (ngSubmit)="saveData()" [formGroup]="editBookForm" class="container-fluid" style="width: 70%;">
+        <div class="container">
+            <div class="row my-3">
+                <!-- formulario -->
+                <div class="form-group col-12 col-lg-6 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                    <span><i class="fas fa-id-card"></i></span> &nbsp;
+                    <label>Titulo&nbsp;<span style="color: red;">*</span></label>
+                    <input class="w3-input form-control" type="text" placeholder="Ingrese el titulo del libro" id="titulo" name="titulo" formControlName="titulo" [ngClass]="{ 'is-invalid': submitted && f.titulo.errors }">
+
+                    <div *ngIf="submitted && f.titulo.errors" class="invalid-feedback">
+                        <div *ngIf="f.titulo.errors.required">Titulo libro es requerido</div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group col-12 col-lg-6 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                    <span><i class="fas fa-calendar"></i></span> &nbsp;
+                    <label>Fecha&nbsp;<span style="color: red;">*</span></label>
+                    <input class="w3-input form-control" type="text" placeholder="Ingrese fecha" id="fecha" name="fecha" formControlName="fecha" [ngClass]="{ 'is-invalid': submitted && f.fecha.errors }">
+
+                    <div *ngIf="submitted && f.fecha.errors" class="invalid-feedback">
+                        <div *ngIf="f.fecha.errors.required">Fecha es requerido</div>
+                    </div>
+                </div>
+
+
+                <div class="form-group col-12 col-lg-6 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                    <span><i class="fas fa-list-ol"></i></span> &nbsp;
+                    <label>Nro. Paginas&nbsp;<span style="color: red;">*</span></label>
+                    <input class="w3-input form-control" type="number" placeholder="Ingrese numero de paginas" id="numPaginas" name="numPaginas" formControlName="numPaginas" [ngClass]="{ 'is-invalid': submitted && f.numPaginas.errors }">
+
+                    <div *ngIf="submitted && f.numPaginas.errors" class="invalid-feedback">
+                        <div *ngIf="f.numPaginas.errors.required">Nro. Paginas es requerido</div>
+                    </div>
+                </div>
+
+                <div class="form-group col-12 col-lg-6 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                    <span><i class="fas fa-image"></i></span> &nbsp;
+                    <label>Cargar Imagen&nbsp;<span style="color: red;">*</span></label>
+                    <input class="w3-input form-control" id="imagen" name="imagen" formControlName="imagen" [ngClass]="{ 'is-invalid': submitted && f.imagen.errors }" #file type="file" accept='image/*' (change)="preview(file.files)">
+
+                    <div *ngIf="submitted && f.imagen.errors" class="invalid-feedback">
+                        <div *ngIf="f.imagen.errors.required">Imagen es requerido</div>
+                    </div>
+                </div>
+
+                <!--  <div class="form-group col-12 col-lg-6 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                            <span><i class="fas fa-image"></i></span> &nbsp;
+                            <label>ID&nbsp;<span style="color: red;">*</span></label>
+                            <input class="w3-input form-control" type="text" id="id" name="id" formControlName="id" [ngClass]="{ 'is-invalid': submitted && f.id.errors }">
+
+                            <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
+                                <div *ngIf="f.id.errors.required">Imagen es requerido</div>
+                            </div>
+                        </div> -->
+
+                <div class="form-group col-12 col-lg-6 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                    <span><i class="fas fa-list"></i></span> &nbsp;
+                    <label>Descripción&nbsp;<span style="color: red;">*</span></label>
+                    <textarea rows="4" class="w3-input form-control" type="text" placeholder="Ingrese la descripción del libro" id="descripcion" name="descripcion" formControlName="descripcion" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"></textarea>
+
+                    <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                        <div *ngIf="f.descripcion.errors.required">Descripción es requerido</div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group col-12 col-lg-6 col-xs-12 col-md-12 col-sm-12 my-2 button-background" style="text-align:center;">
+                    <span><i class="fas fa-list"></i></span> &nbsp;
+                    <label>Extracto&nbsp;<span style="color: red;">*</span></label>
+                    <textarea rows="4" class="w3-input form-control" type="text" placeholder="Ingrese extracto del libro" id="extracto" name="extracto" formControlName="extracto" [ngClass]="{ 'is-invalid': submitted && f.extracto.errors }"></textarea>
+
+                    <div *ngIf="submitted && f.extracto.errors" class="invalid-feedback">
+                        <div *ngIf="f.extracto.errors.required">Extracto es requerido</div>
+                    </div>
+                </div>
+
+                <!-- botones -->
+                <div class="form-group mt-2" style="margin-left: 2%;">
+                    <button type="submit" (click)="edit()" class="btn btn-lg btn-success gradient text-color">Editar</button>
+                </div>
+
+                <!-- <div class="form-group mt-2" style="margin-left: 2%;">
+                        <button type="reset" class="btn btn-lg btn-danger text-color" (click)="preview()">Visualizar imagen</button>
+                    </div> -->
+
+                <div class="form-group mt-2" style="margin-left: 2%;">
+                    <button type="reset" class="btn btn-lg btn-danger text-color">Borrar</button>
+                </div>
+
+
+            </div>
+        </div>
+
+    </form>
+</div>
